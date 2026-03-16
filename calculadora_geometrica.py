@@ -6,9 +6,9 @@ print("Welcome!")
 print("This is a geometric calculator")
 print()
 
-calculator = "yes"
+calculator = 1
 
-while calculator == "yes":
+while calculator == 1:
 
     print()
     print("""Please select one option:
@@ -217,11 +217,11 @@ while calculator == "yes":
 
     while choice == "exit":
 
-        calculator = "no"
+        calculator = 2
         break
 
     else: 
         continue
 
-if calculator == "no":
+if calculator == 2:
     print("See you soon!")
