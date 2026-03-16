@@ -1,4 +1,4 @@
-# Melissa Garrido
+## Melissa Garrido
 pi = 3.14
 
 
@@ -15,6 +15,7 @@ while calculator == 1:
     print("""Please select one option:
         - 2D
         - 3D
+        - Units
         - Exit""")
     print()
 
@@ -46,10 +47,7 @@ while calculator == 1:
                         perimeter = 4 * l
                         print("Area: ", round(area,2))
                         print("Perimeter: ", round(perimeter,2))
-
-
                         break
-                        
 
                     else:
                         print("Insert valid number")
@@ -152,8 +150,6 @@ while calculator == 1:
             continue
     
     while choice == "3d":
-
-        print("3D")
 
         print("""You have the following options:
             1. Cube
@@ -264,6 +260,62 @@ while calculator == 1:
 
         except ValueError:
             print("Choose a valid option")
+            continue
+
+    while choice == "units":
+
+        print()
+        print("""Length converter - Please select one option:
+            1. Inches
+            2. Feet
+            3. Yards
+            4. Miles
+            5. Go back""")
+
+        from_unit = input("Convert from: ").strip()
+
+        try:
+            from_unit = int(from_unit)
+
+            if from_unit in [1, 2, 3, 4]:
+
+                try:
+                    value = float(input("Enter value: ").strip())
+                    if value < 0:
+                        print("Insert valid number")
+                        continue
+
+                    # Convert everything to inches first
+                    if from_unit == 1:
+                        in_inches = value
+                    elif from_unit == 2:
+                        in_inches = value * 12
+                    elif from_unit == 3:
+                        in_inches = value * 36
+                    elif from_unit == 4:
+                        in_inches = value * 63360
+
+                    print()
+                    print("Results:")
+                    print("Inches:", round(in_inches, 4))
+                    print("Feet:  ", round(in_inches / 12, 2))
+                    print("Yards: ", round(in_inches / 36, 2))
+                    print("Miles: ", round(in_inches / 63360, 2))
+                    break
+
+                except ValueError:
+                    print("Insert valid number")
+                    continue
+
+            elif from_unit == 5:
+                break
+
+            else:
+                print("Choose valid option")
+                continue
+
+        except ValueError:
+            print("Choose valid option")
             continue
 
     while choice == "exit":
