@@ -1,6 +1,7 @@
 # Melissa Garrido
 pi = 3.14
 
+
 print()
 print("Welcome!")
 print("This is a geometric calculator")
@@ -40,31 +41,47 @@ while calculator == 1:
 
                 try:
                     l = float(input("Please insert length: ").strip())
-                    area = l ** 2
-                    perimeter = 4 * l
-                    print("Area: ", area)
-                    print("Perimeter: ", perimeter)
-                    break
+                    if l > 0:
+                        area = l ** 2
+                        perimeter = 4 * l
+                        print("Area: ", round(area,2))
+                        print("Perimeter: ", round(perimeter,2))
+
+
+                        break
+                        
+
+                    else:
+                        print("Insert valid number")
+                        continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
+                
 
             elif shape == 2:
 
                 print("Rectangle")
 
                 try:
-                    l = float(input("Please insert length: ").strip())
-                    w = float(input("Please insert width: ").strip())
-                    perimeter = 2 * l + 2 * w
-                    area = l * w
-                    print("Area: ", area)
-                    print("Perimeter: ", perimeter)
-                    break
+                    
+                        l = float(input("Please insert length: ").strip())
+                        w = float(input("Please insert width: ").strip())
+
+                        if l > 0 and w > 0:
+                            perimeter = 2 * l + 2 * w
+                            area = l * w
+                            print("Area: ", round(area,2))
+                            print("Perimeter: ", round(perimeter,2))
+                            break
+
+                        else:
+                            print("Insert valid number")                                
+                            continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 3:
@@ -73,16 +90,21 @@ while calculator == 1:
 
                 try:
                     r = float(input("Please insert radius: ").strip())
-                    d = r * 2
-                    area = pi * r ** 2
-                    perimeter = 2 * pi * r
-                    print("Area: ", area)
-                    print("Perimeter: ", perimeter)
-                    print("Diameter: ", d)
-                    break
+                    if r > 0:
+                        d = r * 2
+                        area = pi * r ** 2
+                        perimeter = 2 * pi * r
+                        print("Area: ", round(area,2))
+                        print("Perimeter: ", round(perimeter,2))
+                        print("Diameter: ", round(d,2))
+                        break
+
+                    else:
+                            print("Insert valid number")
+                            continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 4:
@@ -90,35 +112,43 @@ while calculator == 1:
                 print("Right Triangle")
 
                 try:
+                    
                     a1 = float(input("Please insert one angle: ").strip())
                     a2 = 90.0
                     b = float(input("Please insert base: ").strip())
                     h = float(input("Please insert height: ").strip())
-                    area = (b * h) / 2
-                    a3 = 180 - a1 - a2
-                    hypotenuse = (b ** 2 + h ** 2) ** 0.5
-                    perimeter = b + h + hypotenuse
-                    print("Area: ", area)
-                    print("Perimeter: ", perimeter)
-                    print("Angle 1:", a1)
-                    print("Angle 2:", a2)
-                    print("Angle 3: ", a3)
-                    print("Hypotenuse: ", hypotenuse)
+                    if 90 > a1 > 0 and a2 > 0 and b > 0 and h > 0:
+
+                        area = (b * h) / 2
+                        a3 = 180 - a1 - a2
+                        hypotenuse = (b ** 2 + h ** 2) ** 0.5
+                        perimeter = b + h + hypotenuse
+                        print("Area: ", round(area,2))
+                        print("Perimeter: ", round(perimeter,2))
+                        print("Angle 1:", a1)
+                        print("Angle 2:", a2)
+                        print("Angle 3: ", a3)
+                        print("Hypotenuse: ", round(hypotenuse,2))
+                    
+                    else:
+                        print("Insert valid number")
+                        continue
+                    
                     break
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 5:
                 break
 
             else:
-                print("Choose a valid option")
+                print("Choose valid option")
                 continue
 
         except ValueError:
-            print("Choose a valid option")
+            print("Choose valid option")
             continue
     
     while choice == "3d":
@@ -143,14 +173,19 @@ while calculator == 1:
 
                 try:
                     l = float(input("Please insert length: ").strip())
-                    surface_area = 6 * l ** 2
-                    volume = l ** 3
-                    print("Surface Area: ", surface_area)
-                    print("Volume: ", volume)
-                    break
+                    if l > 0:
+                        area = 6 * l ** 2
+                        volume = l ** 3
+                        print("Surface Area: ", round(area,2))
+                        print("Volume: ", round(volume,2))
+                        break
+
+                    else:
+                        print("Insert valid number")
+                        continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 2:
@@ -159,14 +194,18 @@ while calculator == 1:
 
                 try:
                     r = float(input("Please insert radius: ").strip())
-                    area = 4 * pi * r ** 2
-                    volume = (4/3) * pi * r ** 3
-                    print("Surface Area: ", area)
-                    print("Volume: ", volume)
-                    break
+                    if r > 0:
+                        area = 4 * pi * r ** 2
+                        volume = (4/3) * pi * r ** 3
+                        print("Surface Area: ", round(area,2))
+                        print("Volume: ", round(volume,2))
+                        break
+                    else:
+                        print("Insert valid number")
+                        continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 3:
@@ -176,14 +215,20 @@ while calculator == 1:
                 try:
                     r = float(input("Please insert radius: ").strip())
                     h = float(input("Please insert height: ").strip())
-                    area = 2 * pi * r * (r + h)
-                    volume = pi * r ** 2 * h
-                    print("Surface Area: ", area)
-                    print("Volume: ", volume)
-                    break
+
+                    if r > 0 and h > 0:
+                        area = 2 * pi * r * (r + h)
+                        volume = pi * r ** 2 * h
+                        print("Surface Area: ", round(area,2))
+                        print("Volume: ", round(volume,2))
+                        break
+
+                    else:
+                        print("Insert valid number")
+                        continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 4:
@@ -194,14 +239,20 @@ while calculator == 1:
                     l = float(input("Please insert length: ").strip())
                     h = float(input("Please insert height: ").strip())
                     w = float(input("Please insert width: ").strip())
-                    area = 2 * (l*w + l*h + w*h)
-                    volume = l * w * h
-                    print("Surface Area: ", area)
-                    print("Volume: ", volume)
-                    break
+
+                    if l > 0 and h > 0 and w > 0:
+                        area = 2 * (l*w + l*h + w*h)
+                        volume = l * w * h
+                        print("Surface Area: ", round(area,2))
+                        print("Volume: ", round(volume,2))
+                        break
+
+                    else:
+                        print("Insert valid number")
+                        continue
 
                 except ValueError:
-                    print("Insert a valid number")
+                    print("Insert valid number")
                     continue
 
             elif shape == 5:
