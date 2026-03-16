@@ -6,7 +6,7 @@ print("Welcome!")
 print("This is a geometric calculator")
 print()
 
-calculator = input("Do you want to perform an operation? (yes / no): ").lower().strip()
+calculator = "yes"
 
 while calculator == "yes":
 
