@@ -12,9 +12,9 @@ while calculator == "yes":
 
     print()
     print("""Please select one option:
-          - 2D
-          - 3D
-          - Exit""")
+        - 2D
+        - 3D
+        - Exit""")
     print()
 
     choice = input("Write your choice: ").lower().strip()
@@ -25,10 +25,9 @@ while calculator == "yes":
         print("""You have the following options:
             1. Square
             2. Rectangle
-            3. Triangle
-            4. Circle
-            5. Triangle Rectangle
-            6. Go back""")
+            3. Circle
+            4. Right Triangle 
+            5. Go back""")
         
         shape = input("Choose a number: ").strip()
 
@@ -70,28 +69,6 @@ while calculator == "yes":
 
             elif shape == 3:
 
-                print("Triangle")
-
-                try:
-                    a1 = float(input("Please insert angle 1: ").strip())
-                    a2 = float(input("Please insert angle 2: ").strip())
-                    b = float(input("Please insert base: ").strip())
-                    h = float(input("Please insert height: ").strip())
-                    area = (b * h) / 2
-                    a3 = 180 - a1 - a2
-                    hypotenuse = (b ** 2 + h ** 2) ** 0.5
-                    perimeter = b + h + hypotenuse
-                    print("Area: ", area)
-                    print("Perimeter: ", perimeter)
-                    print("Angle 3: ", a3)
-                    break
-
-                except ValueError:
-                    print("Insert a valid number")
-                    continue
-
-            elif shape == 4:
-
                 print("Circle")
 
                 try:
@@ -108,9 +85,9 @@ while calculator == "yes":
                     print("Insert a valid number")
                     continue
 
-            elif shape == 5:
+            elif shape == 4:
 
-                print("Triangle Rectangle")
+                print("Right Triangle")
 
                 try:
                     a1 = float(input("Please insert one angle: ").strip())
@@ -133,7 +110,7 @@ while calculator == "yes":
                     print("Insert a valid number")
                     continue
 
-            elif shape == 6:
+            elif shape == 5:
                 break
 
             else:
@@ -240,7 +217,6 @@ while calculator == "yes":
 
     while choice == "exit":
 
-        print("See you soon!")
         calculator = "no"
         break
 
