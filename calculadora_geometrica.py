@@ -7,9 +7,9 @@ print("Welcome!")
 print("This is a geometric calculator")
 print()
 
-calculator = 1
+calculator = False
 
-while calculator == 1:
+while not calculator:
 
     print()
     print("""Please select one option:
@@ -47,8 +47,7 @@ while calculator == 1:
                         perimeter = 4 * l
                         print("Area: ", round(area,2))
                         print("Perimeter: ", round(perimeter,2))
-                        break
-
+                        choice = "back"
                     else:
                         print("Insert valid number")
                         continue
@@ -72,7 +71,7 @@ while calculator == 1:
                             area = l * w
                             print("Area: ", round(area,2))
                             print("Perimeter: ", round(perimeter,2))
-                            break
+                            choice = "back"
 
                         else:
                             print("Insert valid number")                                
@@ -95,7 +94,7 @@ while calculator == 1:
                         print("Area: ", round(area,2))
                         print("Perimeter: ", round(perimeter,2))
                         print("Diameter: ", round(d,2))
-                        break
+                        choice = "back"
 
                     else:
                             print("Insert valid number")
@@ -132,14 +131,14 @@ while calculator == 1:
                         print("Insert valid number")
                         continue
                     
-                    break
+                    choice = "back"
 
                 except ValueError:
                     print("Insert valid number")
                     continue
 
             elif shape == 5:
-                break
+                choice = "back"
 
             else:
                 print("Choose valid option")
@@ -174,7 +173,7 @@ while calculator == 1:
                         volume = l ** 3
                         print("Surface Area: ", round(area,2))
                         print("Volume: ", round(volume,2))
-                        break
+                        choice = "back"
 
                     else:
                         print("Insert valid number")
@@ -195,7 +194,7 @@ while calculator == 1:
                         volume = (4/3) * pi * r ** 3
                         print("Surface Area: ", round(area,2))
                         print("Volume: ", round(volume,2))
-                        break
+                        choice = "back"
                     else:
                         print("Insert valid number")
                         continue
@@ -217,7 +216,7 @@ while calculator == 1:
                         volume = pi * r ** 2 * h
                         print("Surface Area: ", round(area,2))
                         print("Volume: ", round(volume,2))
-                        break
+                        choice = "back"
 
                     else:
                         print("Insert valid number")
@@ -241,7 +240,7 @@ while calculator == 1:
                         volume = l * w * h
                         print("Surface Area: ", round(area,2))
                         print("Volume: ", round(volume,2))
-                        break
+                        choice = "back"
 
                     else:
                         print("Insert valid number")
@@ -252,7 +251,7 @@ while calculator == 1:
                     continue
 
             elif shape == 5:
-                break
+                choice = "back"
 
             else:
                 print("Choose a valid option")
@@ -301,14 +300,14 @@ while calculator == 1:
                     print("Feet:  ", round(in_inches / 12, 2))
                     print("Yards: ", round(in_inches / 36, 2))
                     print("Miles: ", round(in_inches / 63360, 2))
-                    break
+                    choice = "back"
 
                 except ValueError:
                     print("Insert valid number")
                     continue
 
             elif from_unit == 5:
-                break
+                choice = "back"
 
             else:
                 print("Choose valid option")
@@ -318,13 +317,12 @@ while calculator == 1:
             print("Choose valid option")
             continue
 
-    while choice == "exit":
+    if choice == "exit":
 
-        calculator = 2
         break
 
     else: 
         continue
 
-if calculator == 2:
+if calculator == False:
     print("See you soon!")
